@@ -139,6 +139,6 @@ plt.show()
 ![Visualization for Data Nerds](3_Project\images\highest_paid_demand_skills.png)
 
 #### Insights:
--The top graph shows specialized technical skills like 'dplyr' and 'Gitlab'
+- The top graph shows specialized technical skills like 'dplyr' and 'Gitlab'
 
 - The bottom graph highlights that foundational skills like 'Excel', 'Powerpoint' and 'SQL' are the most in-demand
