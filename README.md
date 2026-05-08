@@ -67,3 +67,78 @@ plt.show()
 
 ### Results
 ![Visualization for Data Nerds](3_Project\images\Trending_skills_US.png)
+
+
+## 3. How well do jobs and skills pay for Data Analysts?
+
+### Salary Analysis for Data Nerds
+
+#### Visualize Data
+
+```
+sns.boxplot(data=df_US_top6, x='salary_year_avg', y='job_title_short', order=job_order)
+sns.set_theme(style='ticks')
+sns.despine()
+
+# this is all the same
+plt.title('Salary Distributions of Data Jobs in the US')
+plt.xlabel('Yearly Salary (USD)')
+plt.ylabel('')
+plt.xlim(0, 600000) 
+ticks_x = plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K')
+plt.gca().xaxis.set_major_formatter(ticks_x)
+plt.show()
+```
+
+#### Insights
+
+-There is a significant variation in salaray ranges across different job titles. Senior Data Scientist positions tend to have the highest salary potential.
+
+-The median salaries increase with the seniority and specialization of the roles. 
+
+### Results
+![Visualization for Data Nerds](3_Project\images\Salary_distributions.png)
+
+
+# The Analysis
+## 3. How well do jobs and skills pay for Data
+### Highest Paid & Most demanded skills for Data
+#### Visualize Data
+
+```
+fig, ax = plt.subplots(2, 1)  
+
+# Top 10 Highest Paid Skills for Data Analysts
+sns.barplot(data=df_DA_top_pay, x='median', y=df_DA_top_pay.index, hue='median', ax=ax[0], palette='dark:b_r')
+ax[0].legend().remove()
+# original code:
+# df_DA_top_pay[::-1].plot(kind='barh', y='median', ax=ax[0], legend=False) 
+ax[0].set_title('Highest Paid Skills for Data Analysts in the US')
+ax[0].set_ylabel('')
+ax[0].set_xlabel('')
+ax[0].xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${int(x/1000)}K'))
+
+
+# Top 10 Most In-Demand Skills for Data Analysts')
+sns.barplot(data=df_DA_skills, x='median', y=df_DA_skills.index, hue='median', ax=ax[1], palette='light:b')
+ax[1].legend().remove()
+# original code:
+# df_DA_skills[::-1].plot(kind='barh', y='median', ax=ax[1], legend=False)
+ax[1].set_title('Most In-Demand Skills for Data Analysts in the US')
+ax[1].set_ylabel('')
+ax[1].set_xlabel('Median Salary (USD)')
+ax[1].set_xlim(ax[0].get_xlim())  # Set the same x-axis limits as the first plot
+ax[1].xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${int(x/1000)}K'))
+
+sns.set_theme(style='ticks')
+plt.tight_layout()
+plt.show()
+```
+
+### Results
+![Visualization for Data Nerds](3_Project\images\highest_paid_demand_skills.png)
+
+#### Insights:
+-The top graph shows specialized technical skills like 'dplyr' and 'Gitlab'
+
+- The bottom graph highlights that foundational skills like 'Excel', 'Powerpoint' and 'SQL' are the most in-demand
