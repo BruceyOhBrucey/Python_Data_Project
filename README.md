@@ -142,3 +142,53 @@ plt.show()
 - The top graph shows specialized technical skills like 'dplyr' and 'Gitlab'
 
 - The bottom graph highlights that foundational skills like 'Excel', 'Powerpoint' and 'SQL' are the most in-demand
+
+# The Analysis
+
+## 4. What is the most optimal skill to learn for Data Analysts?
+
+#### Visualize Data
+
+```python
+sns.scatterplot(
+    data=df_DA_skills_tech_high_demand,
+    x='skill_percent',
+    y='median_salary',
+    hue='technology'
+    )
+
+sns.despine()
+sns.set_theme(style='ticks')
+
+
+# Prepare texts for adjustText
+texts = []
+for i, txt in enumerate(df_DA_skills_high_demand.index):
+    texts.append(plt.text(df_DA_skills_high_demand['skill_percent'].iloc[i], df_DA_skills_high_demand['median_salary'].iloc[i], txt))
+
+# Adjust text to avoid overlap
+adjust_text(texts, arrowprops=dict(arrowstyle='->', color='gray'), only_move={"explode":"sas"})
+
+# Set axis labels, title, and legend
+plt.xlabel('Percent of Data Analyst Jobs')
+plt.ylabel('Median Yearly Salary')
+plt.title('Most Optimal Skills for Data Analysts in the US')
+plt.legend(title='Technology')
+
+from matplotlib.ticker import PercentFormatter
+ax = plt.gca()
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K'))
+ax.xaxis.set_major_formatter(PercentFormatter(decimals=0))
+
+# Adjust layout and display plot 
+plt.tight_layout()
+plt.show()
+```
+
+#### Results
+![Most Optimal skills for Data Analysts in USA](3_Project\images\Most_optimal_skills_DA_US.png)
+*A scatterplot visualizing the most optimal skills (high paying & high demand) for data analysts in USA.*
+
+#### Insights
+- The scatter plot shows that most of the `programming` skills (colored blue) tend to cluster at the higher salary levels compared to other categories
+- The database skills (colored orange), such as Oracle and SQL Server, are associated with some of the highest salaries among data analyst tools.
