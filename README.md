@@ -33,7 +33,7 @@ plt.show()
 ```
 
 ### Results
-![Visualization for Data Nerds](3_Project\images\Likelihood_skills_requested_US.png)
+![Visualization for Data Nerds](3_Project/images/Likelihood_skills_requested_US.png)
 
 ### Insights
 - Python is a versratile skill, highly demanded across all three roles, but most prominently for Data Scientists (72%) and Data Engineers (65%).
