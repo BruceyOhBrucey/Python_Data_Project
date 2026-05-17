@@ -66,7 +66,7 @@ plt.show()
 ```
 
 ### Results
-![Visualization for Data Nerds](3_Project\images\Trending_skills_US.png)
+![Visualization for Data Nerds](3_Project/images/Trending_skills_US.png)
 
 
 ## 3. How well do jobs and skills pay for Data Analysts?
@@ -97,7 +97,7 @@ plt.show()
 -The median salaries increase with the seniority and specialization of the roles. 
 
 ### Results
-![Visualization for Data Nerds](3_Project\images\Salary_distributions.png)
+![Visualization for Data Nerds](3_Project/images/Salary_distributions.png)
 
 
 # The Analysis
@@ -136,7 +136,7 @@ plt.show()
 ```
 
 ### Results
-![Visualization for Data Nerds](3_Project\images\highest_paid_demand_skills.png)
+![Visualization for Data Nerds](3_Project/images/highest_paid_demand_skills.png)
 
 #### Insights:
 - The top graph shows specialized technical skills like 'dplyr' and 'Gitlab'
@@ -186,7 +186,7 @@ plt.show()
 ```
 
 #### Results
-![Most Optimal skills for Data Analysts in USA](3_Project\images\Most_optimal_skills_DA_US.png)
+![Most Optimal skills for Data Analysts in USA](3_Project/images/Most_optimal_skills_DA_US.png)
 *A scatterplot visualizing the most optimal skills (high paying & high demand) for data analysts in USA.*
 
 #### Insights
